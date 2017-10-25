@@ -4,7 +4,7 @@
       <th scope="col">Brand</th>
       <th scope="col">Product Name</th>
       <th scope="col">Price</th>
-      <th scope="col">Pints</th>
+      <th scope="col">Pints Remaining</th>
     </tr>
   </thead>
   <tbody>
@@ -12,7 +12,11 @@
       <td>{{keg.brand}}</td>
       <td>{{keg.name}}</td>
       <td>${{keg.price}}</td>
-      <td>{{keg.pints}}</td>
+      <td>
+        <div class="progress">
+          <div [class]="pintsLeftProgressBar(keg)" role="progressbar" [attr.aria-valuenow]="pintsLeft(keg)" aria-valuemin="0" aria-valuemax="100">{{keg.pints}}</div>
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>

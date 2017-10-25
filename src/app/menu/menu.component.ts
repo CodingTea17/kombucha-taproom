@@ -18,4 +18,16 @@ export class MenuComponent implements OnInit {
   ngOnInit(){
     this.kegs = this.kegService.getKegs();
   }
+
+  pintsLeftProgressBar(theKeg) {
+    if (theKeg.pints > 31) {
+      return "progress-bar bg-warning text-dark w-" + this.pintsLeft(theKeg);
+    } else {
+      return "progress-bar bg-danger w-" + this.pintsLeft(theKeg);
+    }
+  }
+
+  pintsLeft(theKeg) {
+    return ((theKeg.pints/124) * 100);
+  }
 }
