@@ -1,3 +1,23 @@
-<p>
-  admin works!
-</p>
+<div class="card card-body">
+  <h3>Add New Kombucha to the Taproom</h3>
+  <div>
+    <div>
+      <label>Brand:</label>
+      <br>
+      <input #newBrand>
+    </div>
+
+    <div>
+      <label>Name:</label>
+      <br>
+      <input #newName>
+    </div>
+
+    <div>
+      <label>Price:</label>
+      <br>
+      <input #newPrice>
+    </div>
+  </div>
+  <button class="btn btn-success btn-block" (click)="submitForm(newBrand.value, newName.value, newPrice.value); newBrand.value=''; newName.value=''; newPrice.value=''">Add to Taproom!</button>
+</div>

@@ -1,19 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Keg } from '../keg.model';
+import { Router } from '@angular/router';
+import { KegService } from '../keg.service';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css']
+  styleUrls: ['./menu.component.css'],
+  providers: [ KegService ]
 })
-export class MenuComponent {
-  kegs = KEGS;
-}
+export class MenuComponent implements OnInit {
+  kegs: FirebaseListObservable<any[]>;
 
-const KEGS: Keg[] = [
-  new Keg("Humm", "Lemon Ginger", "3.00"),
-  new Keg("Humm", "Blueberry Mint", "3.00"),
-  new Keg("GT's", "Gingerade", "2.50"),
-  new Keg("Lion Heart Kombucha", "Ginger Fixx", "3.50"),
-  new Keg("Soma", "Cherry Chia", "4.00")
-];
+  constructor(private router: Router, private kegService: KegService) {}
+
+  ngOnInit(){
+    this.kegs = this.kegService.getKegs();
+  }
+}

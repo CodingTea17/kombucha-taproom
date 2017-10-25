@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let keg of kegs;
+    <tr *ngFor="let keg of kegs | async;
       let i = index"
       [attr.data-index]="i"
     >
