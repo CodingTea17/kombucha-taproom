@@ -13,4 +13,8 @@ export class KegService {
   getKegs() {
     return this.kegs;
   }
+
+  addKeg(newKeg: Keg) {
+    this.kegs.push(newKeg);
+  }
 }

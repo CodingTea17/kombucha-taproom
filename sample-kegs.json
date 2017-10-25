@@ -1,0 +1,27 @@
+{
+  "kegs": [{
+    "brand": "Humm",
+    "name": "Lemon Ginger",
+    "price": "3.00",
+    "pints": 124,
+    "id": 1
+  }, {
+    "brand": "GT's",
+    "name": "Gingerade",
+    "price": "2.50",
+    "pints": 124,
+    "id": 2
+  }, {
+    "brand": "Lion Heart Kombucha",
+    "name": "Ginger Fixx",
+    "price": "3.50",
+    "pints": 124,
+    "id": 3
+  }, {
+    "brand": "Soma",
+    "name": "Cherry Chia",
+    "price": "4.00",
+    "pints": 124,
+    "id": 4
+  }]
+}

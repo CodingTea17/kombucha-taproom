@@ -1,7 +1,6 @@
 <table class="table table-bordered text-white bg-info">
   <thead>
     <tr>
-      <th scope="col">#</th>
       <th scope="col">Brand</th>
       <th scope="col">Product Name</th>
       <th scope="col">Price</th>
@@ -9,11 +8,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let keg of kegs | async;
-      let i = index"
-      [attr.data-index]="i"
-    >
-      <th scope="row">{{i+1}}</th>
+    <tr *ngFor="let keg of kegs | async">
       <td>{{keg.brand}}</td>
       <td>{{keg.name}}</td>
       <td>${{keg.price}}</td>

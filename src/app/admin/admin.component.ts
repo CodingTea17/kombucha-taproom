@@ -17,5 +17,6 @@ export class AdminComponent implements OnInit {
 
   submitForm(brand: string, name: string, price: string) {
     var newKeg: Keg = new Keg(brand, name, price);
+    this.kegService.addKeg(newKeg);
   }
 }
