@@ -1,4 +1,12 @@
-<td><input [(ngModel)]="selectedKeg.brand"></td>
-<td><input [(ngModel)]="selectedKeg.name"></td>
-<td><input [(ngModel)]="selectedKeg.price"></td>
-<td colspan="3"><button class="btn btn-primary btn-block" (click)="updateKeg(selectedKeg)">Update</button></td>
+<td><input class="form-control" [(ngModel)]="selectedKeg.brand"></td>
+<td><input class="form-control" [(ngModel)]="selectedKeg.name"></td>
+<td><input class="form-control" [(ngModel)]="selectedKeg.price"></td>
+<td>
+  <table style="width:100%;">
+    <tr>
+      <td id="refill" class="inner-td"><button class="btn btn-secondary btn-block" (click)="refillKeg(selectedKeg)">Refill Keg</button></td>
+      <td class="inner-td"><button class="btn btn-danger btn-block" (click)="sellPint(selectedKeg)">-1 Pint</button></td>
+      <td id="update" class="inner-td"><button class="btn btn-primary btn-block" (click)="updateKeg(selectedKeg)">Update</button></td>
+    </tr>
+  </table>
+</td>

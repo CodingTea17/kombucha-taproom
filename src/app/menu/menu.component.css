@@ -1,18 +1,18 @@
 td {
   height: 63px;
   font-size: 1em;
-  vertical-align:middle;
+  vertical-align: middle;
 }
 .progress-bar {
   height:2em;
   font-size: 1.5em;
   padding-top: 0.5em;
-  text-align:center;
+  text-align: center;
 }
 .progress {
-  vertical-align:middle;
+  vertical-align: middle;
 }
 
 #price {
-  width: 10%;
+  width: 15%;
 }

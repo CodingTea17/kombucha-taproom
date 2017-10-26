@@ -1,0 +1,25 @@
+.inner-td {
+  height: 100%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  vertical-align: middle;
+  border: 0;
+}
+
+#refill {
+  padding-left: 0;
+}
+
+#update {
+  padding-right: 0;
+}
+
+.btn-secondary {
+  background-color: #37115A !important;
+  border-color: #37115A !important;
+}
+
+.btn-secondary:hover {
+  background-color: #1E0041 !important;
+  border-color: #040027 !important;
+}

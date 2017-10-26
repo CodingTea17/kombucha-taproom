@@ -14,8 +14,20 @@ export class EditKegComponent implements OnInit {
   ngOnInit() {
   }
 
-  updateKeg(kegToUpdate){
+  updateKeg(kegToUpdate) {
     this.kegService.updateKeg(kegToUpdate);
+  }
+
+  sellPint(keg) {
+    if(keg.pints - 1 >= 0){
+      this.kegService.sellPint(keg);
+    } else {
+      keg.pints = 0;
+    }
+  }
+
+  refillKeg(keg) {
+    this.kegService.refillKeg(keg);
   }
 
 }

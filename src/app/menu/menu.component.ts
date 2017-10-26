@@ -34,4 +34,9 @@ export class MenuComponent implements OnInit {
     return `${Math.ceil((theKeg.pints/124) * 100)}%`;
   }
 
+  submitForm(brand: string, name: string, price: string) {
+    var newKeg: Keg = new Keg(brand, name, price);
+    this.kegService.addKeg(newKeg);
+  }
+
 }

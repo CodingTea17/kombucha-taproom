@@ -28,4 +28,14 @@ export class KegService {
                                 artist: localUpdatedKeg.name,
                                 description: localUpdatedKeg.price});
   }
+
+  sellPint(localKeg) {
+    var kegEntryInFirebase = this.getKegById(localKeg.$key);
+    kegEntryInFirebase.update({pints: localKeg.pints -= 1});
+  }
+
+  refillKeg(localKeg) {
+    var kegEntryInFirebase = this.getKegById(localKeg.$key);
+    kegEntryInFirebase.update({pints: localKeg.pints = 124});
+  }
 }
