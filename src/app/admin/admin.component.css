@@ -1,0 +1,10 @@
+.col-3 {
+  padding-left: 0px;
+  margin-left: -15px;
+}
+
+#edit-menu {
+  border-left-width: 0px;
+  border-left-color: transparent;
+  border-left-style: hidden;
+}

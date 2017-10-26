@@ -1,36 +1,76 @@
 <div class="row justify-content-center">
-  <div class="col-8">
-    <div class="card card-body">
-      <h3>New Kombucha Keg</h3>
+  <!-- <div class="card card-body">
+    <h3>New Kombucha Keg</h3>
 
-      <div class="row mb-2 form-group">
-        <div class="col-2">
-          <label>Brand:</label>
-        </div>
-        <div class="col-10">
-          <input class="form-control form-control-sm" #newBrand>
-        </div>
+    <div class="row mb-2 form-group">
+      <div class="col-2">
+        <label>Brand:</label>
       </div>
-
-      <div class="row mb-2 form-group">
-        <div class="col-2">
-          <label>Name:</label>
-        </div>
-        <div class="col-10">
-          <input class="form-control form-control-sm" #newName>
-        </div>
+      <div class="col-10">
+        <input class="form-control form-control-sm" #newBrand>
       </div>
-
-      <div class="row mb-3 form-group">
-        <div class="col-2">
-          <label>Price:</label>
-        </div>
-        <div class="col-10">
-          <input class="form-control form-control-sm" #newPrice>
-        </div>
-      </div>
-
-      <button class="btn btn-success btn-block" (click)="submitForm(newBrand.value, newName.value, newPrice.value); newBrand.value=''; newName.value=''; newPrice.value=''">Add to Taproom!</button>
     </div>
+
+    <div class="row mb-2 form-group">
+      <div class="col-2">
+        <label>Name:</label>
+      </div>
+      <div class="col-10">
+        <input class="form-control form-control-sm" #newName>
+      </div>
+    </div>
+
+    <div class="row mb-3 form-group">
+      <div class="col-2">
+        <label>Price:</label>
+      </div>
+      <div class="col-10">
+        <input class="form-control form-control-sm" #newPrice>
+      </div>
+    </div>
+
+    <button class="btn btn-success btn-block" (click)="submitForm(newBrand.value, newName.value, newPrice.value); newBrand.value=''; newName.value=''; newPrice.value=''">Add to Taproom!</button>
+  </div> -->
+  <div class="col-9">
+    <app-menu></app-menu>
+    <table class="table table-bordered bg-light">
+      <thead class="text-white bg-info">
+        <tr>
+          <th scope="col">Brand</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Pints Remaining</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input class="form-control form-control-sm" #newBrand></td>
+          <td><input class="form-control form-control-sm" #newBrand></td>
+          <td><input class="form-control form-control-sm" #newBrand></td>
+          <td><button class="btn btn-success btn-block" (click)="submitForm(newBrand.value, newName.value, newPrice.value); newBrand.value=''; newName.value=''; newPrice.value=''">Add to Taproom!</button></td>
+          <!-- <td id="progress">
+            <div class="progress">
+              <div class="progress-bar bg-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">124</div>
+            </div>
+          </td> -->
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-3">
+    <table id="edit-menu" class="table table-bordered bg-light">
+      <thead class="text-white bg-info">
+        <tr>
+          <th scope="col">Refill Keg</th>
+          <th scope="col">Sell Pint(s)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let keg of kegs | async">
+          <td><button class="btn btn-success btn-block" (click)="sellPint()">+{{124 - keg.pints}} Pints</button></td>
+          <td><button class="btn btn-success btn-block" (click)="sellPint()">-1 Pint</button></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </div>

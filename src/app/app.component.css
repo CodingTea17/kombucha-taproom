@@ -1,5 +1,12 @@
+.container {
+  margin-bottom: 60px;
+}
 .jumbotron {
   text-align: center;
   padding: 32px;
   background-color: #B2EBF2;
 }
+/*.footer {
+  margin-top: 60px;
+  clear: both;
+}*/
