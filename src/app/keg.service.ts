@@ -17,4 +17,15 @@ export class KegService {
   addKeg(newKeg: Keg) {
     this.kegs.push(newKeg);
   }
+
+  getKegById(kegId: string){
+    return this.database.object('/kegs/' + kegId);
+  }
+
+  updateKeg(localUpdatedKeg){
+    var kegEntryInFirebase = this.getKegById(localUpdatedKeg.$key);
+    kegEntryInFirebase.update({brand: localUpdatedKeg.brand,
+                                artist: localUpdatedKeg.name,
+                                description: localUpdatedKeg.price});
+  }
 }

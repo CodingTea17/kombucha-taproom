@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { routing } from './app.routing';
 import { AdminComponent } from './admin/admin.component';
+import { EditKegComponent } from './edit-keg/edit-keg.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -22,7 +23,8 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     MenuComponent,
-    AdminComponent
+    AdminComponent,
+    EditKegComponent
   ],
   imports: [
     BrowserModule,

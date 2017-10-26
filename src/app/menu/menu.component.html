@@ -10,18 +10,21 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let keg of kegs | async">
-      <td>{{keg.brand}}</td>
-      <td>{{keg.name}}</td>
-      <td>${{keg.price}}</td>
-      <td>
-        <div class="progress">
-          <div [style.width]="pintsLeft(keg)" [class]="pintsLeftProgressBar(keg)" role="progressbar" [attr.aria-valuenow]="pintsLeft(keg)" aria-valuemin="0" aria-valuemax="100">{{keg.pints}}</div>
-        </div>
-      </td>
-      <td *ngIf="currentRoute === '/admin'"><button class="btn btn-success btn-block" (click)="sellPint()">+{{124 - keg.pints}} Pints</button></td>
-      <td *ngIf="currentRoute === '/admin'"><button class="btn btn-success btn-block" (click)="sellPint()">-1 Pint</button></td>
-    </tr>
+    <ng-container *ngFor="let keg of kegs | async">
+      <tr>
+        <td>{{keg.brand}}</td>
+        <td>{{keg.name}}</td>
+        <td>${{keg.price}}</td>
+        <td>
+          <div class="progress">
+            <div [style.width]="pintsLeft(keg)" [class]="pintsLeftProgressBar(keg)" role="progressbar" [attr.aria-valuenow]="pintsLeft(keg)" aria-valuemin="0" aria-valuemax="100">{{keg.pints}}</div>
+          </div>
+        </td>
+        <td *ngIf="currentRoute === '/admin'"><button class="btn btn-success btn-block" (click)="sellPint()">+{{124 - keg.pints}} Pints</button></td>
+        <td *ngIf="currentRoute === '/admin'"><button class="btn btn-success btn-block" (click)="sellPint()">-1 Pint</button></td>
+      </tr>
+      <tr app-edit-keg *ngIf="currentRoute === '/admin'"[selectedKeg]="keg"></tr>
+    </ng-container>
     <tr *ngIf="currentRoute === '/admin'">
       <td><input class="form-control form-control-sm" #newBrand></td>
       <td><input class="form-control form-control-sm" #newName></td>
