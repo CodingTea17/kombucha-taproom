@@ -12,6 +12,8 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class MenuComponent implements OnInit {
   kegs: FirebaseListObservable<any[]>;
+  currentRoute: string = this.router.url;
+
   constructor(private router: Router, private kegService: KegService) {}
 
   ngOnInit(){

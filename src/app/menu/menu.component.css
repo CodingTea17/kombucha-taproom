@@ -12,3 +12,7 @@ td {
 .progress {
   vertical-align:middle;
 }
+
+#price {
+  width: 10%;
+}
