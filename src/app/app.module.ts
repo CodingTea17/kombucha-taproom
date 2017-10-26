@@ -11,6 +11,8 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { routing } from './app.routing';
 import { EditKegComponent } from './edit-keg/edit-keg.component';
+import { PublicComponent } from './public/public.component';
+import { PrivateComponent } from './private/private.component';
 
 export const firebaseConfig = {
   apiKey: masterFirebaseConfig.apiKey,
@@ -23,7 +25,9 @@ export const firebaseConfig = {
   declarations: [
     AppComponent,
     MenuComponent,
-    EditKegComponent
+    EditKegComponent,
+    PublicComponent,
+    PrivateComponent
   ],
   imports: [
     BrowserModule,
