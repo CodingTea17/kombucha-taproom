@@ -24,9 +24,11 @@ export class KegService {
 
   updateKeg(localUpdatedKeg){
     var kegEntryInFirebase = this.getKegById(localUpdatedKeg.$key);
-    kegEntryInFirebase.update({brand: localUpdatedKeg.brand,
-                                artist: localUpdatedKeg.name,
-                                description: localUpdatedKeg.price});
+    kegEntryInFirebase.update({
+      brand: localUpdatedKeg.brand,
+      name: localUpdatedKeg.name,
+      price: localUpdatedKeg.price
+    });
   }
 
   sellPint(localKeg) {

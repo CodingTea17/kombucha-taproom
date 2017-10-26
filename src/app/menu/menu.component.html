@@ -9,7 +9,7 @@
   </thead>
   <tbody>
     <ng-container *ngFor="let keg of kegs | async">
-      <tr>
+      <tr (click)="editKeg(keg)">
         <td>{{keg.brand}}</td>
         <td>{{keg.name}}</td>
         <td>${{keg.price}}</td>
@@ -19,17 +19,12 @@
           </div>
         </td>
       </tr>
-      <tr app-edit-keg *ngIf="currentRoute === '/admin'"[selectedKeg]="keg"></tr>
+      <tr app-edit-keg *ngIf="currentRoute === '/admin' && keg === clickedKeg" [clickedKeg]="keg"></tr>
     </ng-container>
     <tr *ngIf="currentRoute === '/admin'">
       <td><input class="form-control form-control" #newBrand placeholder="Brand Name"></td>
       <td><input class="form-control form-control" #newName placeholder="Product Name"></td>
       <td><input class="form-control form-control" #newPrice placeholder="$ Per Pint"></td>
-      <!-- <td>
-        <div class="progress">
-          <div class="progress-bar bg-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">124</div>
-        </div>
-      </td> -->
       <td colspan="3"><button class="btn btn-success btn-block" (click)="submitForm(newBrand.value, newName.value, newPrice.value); newBrand.value=''; newName.value=''; newPrice.value=''">Add to Taproom!</button></td>
     </tr>
   </tbody>

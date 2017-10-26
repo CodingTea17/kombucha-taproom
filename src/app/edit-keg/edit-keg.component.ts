@@ -7,7 +7,7 @@ import { KegService } from '../keg.service';
   styleUrls: ['./edit-keg.component.css']
 })
 export class EditKegComponent implements OnInit {
-  @Input() selectedKeg;
+  @Input() clickedKeg;
 
   constructor(private kegService: KegService) { }
 

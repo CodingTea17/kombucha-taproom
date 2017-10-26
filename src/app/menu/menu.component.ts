@@ -13,6 +13,7 @@ import { FirebaseListObservable } from 'angularfire2/database';
 export class MenuComponent implements OnInit {
   kegs: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
+  clickedKeg = null;
 
   constructor(private router: Router, private kegService: KegService) {}
 
@@ -28,6 +29,11 @@ export class MenuComponent implements OnInit {
     } else {
       return "progress-bar bg-danger";
     }
+  }
+
+  editKeg(theKeg){
+    console.log(theKeg)
+    this.clickedKeg = theKeg;
   }
 
   pintsLeft(theKeg) {
