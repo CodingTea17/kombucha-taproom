@@ -3,13 +3,13 @@
     <h1>{{title}}</h1>
     <hr class="my-4">
     <p>The web application to track and display kombucha tap levels!</p>
-    <a href="/">Menu</a>
+    <a href="/">Menu</a> | <a *ngIf ="!isLoggedIn" (click)="login()">Log in</a> <a *ngIf="isLoggedIn" (click)="logout()">Log out</a>
   </div>
   <router-outlet></router-outlet>
 </div>
 
 <footer class="footer">
   <div class="container">
-    <a class="text-muted" routerLink="admin">Admin</a>
+    <a *ngIf="isLoggedIn" class="text-muted" routerLink="admin">Admin</a>
   </div>
 </footer>

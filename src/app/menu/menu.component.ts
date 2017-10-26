@@ -14,7 +14,6 @@ export class MenuComponent implements OnInit {
   kegs: FirebaseListObservable<any[]>;
   currentRoute: string = this.router.url;
   clickedKeg = null;
-
   constructor(private router: Router, private kegService: KegService) {}
 
   ngOnInit(){
@@ -32,7 +31,6 @@ export class MenuComponent implements OnInit {
   }
 
   editKeg(theKeg){
-    console.log(theKeg)
     this.clickedKeg = theKeg;
   }
 
