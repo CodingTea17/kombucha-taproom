@@ -14,7 +14,7 @@
       <td>${{keg.price}}</td>
       <td>
         <div class="progress">
-          <div [class]="pintsLeftProgressBar(keg)" role="progressbar" [attr.aria-valuenow]="pintsLeft(keg)" aria-valuemin="0" aria-valuemax="100">{{keg.pints}}</div>
+          <div [style.width]="pintsLeft(keg)" [class]="pintsLeftProgressBar(keg)" role="progressbar" [attr.aria-valuenow]="pintsLeft(keg)" aria-valuemin="0" aria-valuemax="100">{{keg.pints}}</div>
         </div>
       </td>
     </tr>

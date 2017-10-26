@@ -12,7 +12,6 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class MenuComponent implements OnInit {
   kegs: FirebaseListObservable<any[]>;
-
   constructor(private router: Router, private kegService: KegService) {}
 
   ngOnInit(){
@@ -20,14 +19,17 @@ export class MenuComponent implements OnInit {
   }
 
   pintsLeftProgressBar(theKeg) {
-    if (theKeg.pints > 31) {
-      return "progress-bar bg-warning text-dark w-" + this.pintsLeft(theKeg);
+    if (theKeg.pints > 93) {
+      return "progress-bar bg-success";
+    } else if (theKeg.pints > 31) {
+      return "progress-bar bg-warning";
     } else {
-      return "progress-bar bg-danger w-" + this.pintsLeft(theKeg);
+      return "progress-bar bg-danger";
     }
   }
 
   pintsLeft(theKeg) {
-    return ((theKeg.pints/124) * 100);
+    return `${Math.ceil((theKeg.pints/124) * 100)}%`;
   }
+
 }
